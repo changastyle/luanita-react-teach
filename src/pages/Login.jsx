@@ -1,6 +1,7 @@
 // src/pages/Login.jsx
 import bgLogin from '../assets/imgs/bg-login.png';
 import { useApp } from '../contexto/AppContext';
+import FormLogin from "../componentes-reutilizables/FormLogin.jsx";
 
 export default function Login() {
     const { bannerHeight } = useApp();
@@ -23,8 +24,9 @@ export default function Login() {
                     style={styleImgLogin}/>
 
             </div>
-            <div className="col-der-layout col-6">
-                DER
+            <div className="col-der-layout col-6 flex-center-v">
+
+                <FormLogin />
             </div>
         </div>
     </>);
