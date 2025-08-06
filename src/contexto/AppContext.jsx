@@ -7,7 +7,7 @@ const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-    const bannerHeight = "80px";
+    const bannerHeight = "50px";
     const themeColor = "#8e44ad";
     const fontColor = "white";
 
