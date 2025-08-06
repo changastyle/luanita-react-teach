@@ -1,16 +1,29 @@
-// src/pages/Inicio.jsx
-export default function Inicio() {
+// src/pages/Login.jsx
+import bgLogin from '../assets/imgs/bg-login.png';
+import { useApp } from '../contexto/AppContext';
+
+export default function Login() {
+    const { bannerHeight } = useApp();
+
+    const styleImgLogin =
+        {
+            width: '100%',
+            // height: calc(100vh - bannerHeight),
+            height: `calc(100vh - ${bannerHeight})`,
+
+};
     return (
     <>
-        <h2>Bienvenido al Login</h2>
-
-
         <div className="cont-layout col-12 flex">
 
-            <div className="col-izq-layout col-6 bsr">
-                IZQ
+            <div className="col-izq-layout col-6">
+
+                <img className="img-bg-login"
+                    src={bgLogin}
+                    style={styleImgLogin}/>
+
             </div>
-            <div className="col-der-layout col-6 bsr">
+            <div className="col-der-layout col-6">
                 DER
             </div>
         </div>

@@ -1,6 +1,7 @@
 // src/componentes/Menu.jsx
 
 import React from 'react';
+import { useApp } from '../contexto/AppContext';
 
 export default function Menu(
     {
@@ -12,26 +13,29 @@ export default function Menu(
         ]
     }
 ) {
+    const { bannerHeight } = useApp();
 
-    const menuStyle = {
+    const contMenuStyle = {
         padding: '10px',
         backgroundColor: bgColor,
         display: 'flex',
-        gap: '20px',
+        height: bannerHeight,
+        // gap: '20px',
         // border: '1px solid red',
     };
 
-    const linkStyle = {
+    const enlaceStyle = {
         textDecoration: 'none',
         color: fontColor,
         fontWeight: 'bold',
+        padding: '10px',
     };
 
 
     return (
-        <div className="cont-menu" style={menuStyle}>
+        <div className="cont-menu" style={contMenuStyle}>
             {arrMenus.map((menuLoop , index) => (
-                <a key={index} href={menuLoop.enlace} style={linkStyle}>
+                <a key={index} href={menuLoop.enlace} class="flex-center-v" style={enlaceStyle}>
                     {menuLoop.nombre}
                 </a>
             ))}

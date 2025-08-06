@@ -54,14 +54,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.bsr {
-  border: solid 1px red;
-}
-.flex
-{
-  display: flex;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -73,4 +65,20 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+
+
+/* CSS GLOBAL: */
+.bsr {
+  border: solid 1px red;
+}
+.flex
+{
+  display: flex;
+}
+.flex-center-v {
+  display: flex;
+  align-items: center;
 }

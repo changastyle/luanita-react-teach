@@ -8,6 +8,7 @@ import Inicio from "./pages/Inicio.jsx";
 import Lupita from "./pages/Lupita.jsx";
 import Login from "./pages/Login.jsx";
 import Salir from "./pages/Salir.jsx";
+import {AppProvider} from "./contexto/AppContext.jsx";
 
 function App() {
     const arrMenus = [
@@ -18,14 +19,16 @@ function App() {
     ];
     return (
         <>
-            <Router>
-                <Menu bgColor="#8e44ad" fontColor="white" arrMenus={arrMenus}/>
-                <Routes>
-                    {arrMenus.map(({ enlace, element }, i) => (
-                        <Route key={i} path={enlace} element={element} />
-                    ))}
-                </Routes>
-            </Router>
+            <AppProvider>
+                <Router>
+                    <Menu bgColor="#8e44ad" fontColor="white" arrMenus={arrMenus}/>
+                    <Routes>
+                        {arrMenus.map(({ enlace, element }, i) => (
+                            <Route key={i} path={enlace} element={element} />
+                        ))}
+                    </Routes>
+                </Router>
+            </AppProvider>
         </>
     );
 }
