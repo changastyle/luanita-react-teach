@@ -11,20 +11,19 @@ import Salir from "./pages/Salir.jsx";
 
 function App() {
     const arrMenus = [
-        { nombre: 'Inicio', enlace: '/' },
-        { nombre: 'Login', enlace: '/login' },
-        { nombre: 'Lupita', enlace: '/lupita' },
-        { nombre: 'Salir', enlace: '/salir' }
+        { nombre: 'Inicio', enlace: '/' , element: <Inicio />},
+        { nombre: 'Login', enlace: '/login' , element: <Login /> },
+        { nombre: 'Lupita', enlace: '/lupita' , element: <Lupita /> },
+        { nombre: 'Salir', enlace: '/salir' , element: <Salir /> }
     ];
     return (
         <>
             <Router>
                 <Menu bgColor="#8e44ad" fontColor="white" arrMenus={arrMenus}/>
                 <Routes>
-                    <Route path="/" element={<Inicio />} />
-                    <Route path="/Login" element={<Login />} />
-                    <Route path="/lupita" element={<Lupita />} />
-                    <Route path="/salir" element={<Salir />} />
+                    {arrMenus.map(({ enlace, element }, i) => (
+                        <Route key={i} path={enlace} element={element} />
+                    ))}
                 </Routes>
             </Router>
         </>
